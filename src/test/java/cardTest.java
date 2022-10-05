@@ -14,7 +14,7 @@ public class cardTest {
     @BeforeAll
     static void setUpAll(){
         if (System.getProperty("os.name").contains("Linux")) {
-            System.setProperty("webdriver.chrome.driver", "driver/linux/chromedriver");
+            System.setProperty("testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'", "driver/linux/chromedriver");
         } else {
             System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
         }
