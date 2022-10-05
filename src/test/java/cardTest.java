@@ -19,16 +19,13 @@ public class cardTest {
             System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
         }
     }
-
     @BeforeEach
-    void setUp() {
-        driver = new ChromeDriver();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
-    }
+        void setUp(){
+            ChromeOptions options = new ChromeOptions();
+            options.setHeadless(true);
+
+            driver = new ChromeDriver(options);
+        }
 
     @AfterEach
     void tearDown() {
@@ -38,6 +35,11 @@ public class cardTest {
 
     @Test
     void sendForm() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
 
         driver.get("http://localhost:7777");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Иван");
