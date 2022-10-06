@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba9bbadb-06c5-4b3a-9be4-1c1e170938ef" name="Changes" comment="" />
+    <list default="true" id="ba9bbadb-06c5-4b3a-9be4-1c1e170938ef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cardTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,9 +133,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.cardTest (1)" />
+        <item itemvalue="JAR Application.app-order.jar" />
         <item itemvalue="Gradle.cardTest.sendForm" />
         <item itemvalue="Gradle.cardTest.test1" />
-        <item itemvalue="JAR Application.app-order.jar" />
       </list>
     </recent_temporary>
   </component>
