@@ -35,10 +35,10 @@ public class cardTest {
 
     @Test
     void shouldTestOrderingCard () throws InterruptedException {
-        driver.get("http://localhost:9999/");
+        driver.get("http://localhost:7777/");
         WebElement form = driver.findElement(By.cssSelector("[method=post]"));
-        form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Олег");
-        form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79270000000");
+        form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Иван");
+        form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79999999999");
         form.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         form.findElement(By.cssSelector("[class=button__text]")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
