@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,28 +10,23 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class cardTest {
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
-    static void setUpAll(){
-        if (System.getProperty("os.name").contains("Linux")) {
-            System.setProperty("testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'", "driver/linux/chromedriver");
-        } else {
-            System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
-        }
+    static void setupAll() {
+        WebDriverManager.chromedriver().setup();
     }
+
     @BeforeEach
-        void setUp(){
-            ChromeOptions options = new ChromeOptions();
-            options.setHeadless(true);
+    void setUp() {
+        ChromeOptions options = new ChromeOptions();
+        options.setHeadless(true);
 
-            driver = new ChromeDriver(options);
-        }
-
+        driver = new ChromeDriver(options);
+    }
     @AfterEach
-    void tearDown() {
+    void teardown() {
         driver.quit();
-        driver = null;
     }
 
     @Test
