@@ -17,8 +17,9 @@ public class cardTest {
     WebDriver driver;
 
     @BeforeAll
-    static void setupAll() {
+    static void setupAll()  {
         WebDriverManager.chromedriver().setup();
+
     }
 
     @BeforeEach
@@ -27,6 +28,7 @@ public class cardTest {
         options.setHeadless(true);
 
         driver = new ChromeDriver(options);
+
     }
     @AfterEach
     void teardown() {
@@ -34,7 +36,7 @@ public class cardTest {
     }
 
     @Test
-    void shouldTestOrderingCard () throws InterruptedException {
+    void shouldTestOrderingCard () {
         driver.get("http://localhost:7777/");
         WebElement form = driver.findElement(By.cssSelector("[method=post]"));
         form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Иван");
