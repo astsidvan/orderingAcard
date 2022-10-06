@@ -17,9 +17,8 @@ public class cardTest {
     WebDriver driver;
 
     @BeforeAll
-    static void setupAll()  {
+    static void setupAll() {
         WebDriverManager.chromedriver().setup();
-
     }
 
     @BeforeEach
@@ -28,7 +27,6 @@ public class cardTest {
         options.setHeadless(true);
 
         driver = new ChromeDriver(options);
-
     }
     @AfterEach
     void teardown() {
@@ -36,15 +34,16 @@ public class cardTest {
     }
 
     @Test
-    void shouldTestOrderingCard () {
-        driver.get("http://localhost:7777/");
+    void shouldTestOrderingCard () throws InterruptedException {
+        driver.get("http://localhost:9999/");
         WebElement form = driver.findElement(By.cssSelector("[method=post]"));
         form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Иван");
-        form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79999999999");
+        form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79629648518");
         form.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         form.findElement(By.cssSelector("[class=button__text]")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+        
     }
 
 }
