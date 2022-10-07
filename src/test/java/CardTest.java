@@ -34,7 +34,7 @@ public class CardTest {
     }
 
     @Test
-    void shouldOrderingCard (){
+    void shouldCard (){
         driver.get("http://localhost:9999/");
         WebElement form = driver.findElement(By.cssSelector("[method=post]"));
         form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Иван");
