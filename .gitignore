@@ -15,6 +15,7 @@ build/
 
 ### IntelliJ IDEA ###
 .idea
+.driver
 *.iws
 *.iml
 *.ipr
@@ -43,3 +44,5 @@ out/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+.idea
+.driver

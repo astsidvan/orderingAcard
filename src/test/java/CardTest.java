@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class cardTest {
+public class CardTest {
     WebDriver driver;
 
     @BeforeAll
@@ -34,7 +34,7 @@ public class cardTest {
     }
 
     @Test
-    void shouldTestOrderingCard () throws InterruptedException {
+    void shouldOrderingCard (){
         driver.get("http://localhost:9999/");
         WebElement form = driver.findElement(By.cssSelector("[method=post]"));
         form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Иванов Иван");
@@ -43,7 +43,7 @@ public class cardTest {
         form.findElement(By.cssSelector("[class=button__text]")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
-        
+
     }
 
 }
